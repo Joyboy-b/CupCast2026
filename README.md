@@ -1,4 +1,4 @@
-﻿# CupCast 2026
+# CupCast 2026
 
 CupCast 2026 is a Python-first World Cup forecasting project for match prediction, Monte Carlo tournament simulation, and dashboard-driven analysis.
 
@@ -49,6 +49,10 @@ Then visit:
 ```text
 http://localhost:8000/dashboard/
 ```
+
+## Current Tournament State
+
+The dashboard includes a live knockout tracker from data/current_tournament.json. As of July 8, 2026, the Round of 16 is complete and the quarterfinals are Morocco vs France, Norway vs England, Spain vs Belgium, and Argentina vs Switzerland.
 
 ## Dashboard Views
 

@@ -4,8 +4,24 @@
   sortKey: "championOdds",
   search: "",
   selectedTeam: null,
+  live: null,
 };
 
+
+const fallbackLiveState = {
+  asOf: "2026-07-08",
+  stage: "Quarterfinals next",
+  headline: "Round of 16 complete. Quarterfinals are set.",
+  note: "Argentina, Switzerland, Morocco, France, Norway, England, Spain, and Belgium are through to the quarterfinals.",
+  quarterfinals: [
+    { match: "QF1", teamA: "Morocco", teamB: "France", status: "Next", path: "Morocco 3-0 Canada / France 1-0 Paraguay" },
+    { match: "QF2", teamA: "Norway", teamB: "England", status: "Next", path: "Norway 2-1 Brazil / England 3-2 Mexico" },
+    { match: "QF3", teamA: "Spain", teamB: "Belgium", status: "Next", path: "Spain 1-0 Portugal / Belgium 4-1 United States" },
+    { match: "QF4", teamA: "Argentina", teamB: "Switzerland", status: "Next", path: "Argentina 3-2 Egypt / Switzerland 0-0 Colombia, 4-3 pens" },
+  ],
+  roundOf16: [],
+  eliminatedHeavyweights: ["Brazil", "Portugal", "Colombia", "United States"],
+};
 const fallbackData = {
   meta: {
     title: "CupCast 2026",
@@ -28,11 +44,22 @@ async function loadData() {
   }
 
   state.selectedTeam = state.data.teams[0] || null;
+  await loadLiveState();
   render();
 }
 
+async function loadLiveState() {
+  try {
+    const response = await fetch("../data/current_tournament.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("No live tournament data yet.");
+    state.live = await response.json();
+  } catch (error) {
+    state.live = fallbackLiveState;
+  }
+}
 function render() {
   renderSummary();
+  renderLiveState();
   renderFilters();
   renderTable();
   renderSelectedTeam();
@@ -42,6 +69,38 @@ function render() {
   renderBracket();
 }
 
+function renderLiveState() {
+  const live = state.live || fallbackLiveState;
+  document.getElementById("liveHeadline").textContent = live.headline;
+  document.getElementById("liveStage").textContent = `${live.stage} / ${live.asOf}`;
+  document.getElementById("liveNote").textContent = live.note;
+
+  document.getElementById("quarterfinalGrid").innerHTML = live.quarterfinals
+    .map(
+      (match) => `
+      <article class="qf-card">
+        <div class="qf-kicker">${match.match} / ${match.status}</div>
+        <strong>${match.teamA} vs ${match.teamB}</strong>
+        <small>${match.path}</small>
+      </article>
+    `
+    )
+    .join("");
+
+  document.getElementById("roundResults").innerHTML = live.roundOf16.length
+    ? live.roundOf16
+        .map(
+          (result) => `
+          <div class="result-pill">
+            <strong>${result.winner}</strong>
+            <span>${result.score}</span>
+            <small>${result.loser}${result.method === "FT" ? "" : ` / ${result.method}`}</small>
+          </div>
+        `
+        )
+        .join("")
+    : "";
+}
 function renderSummary() {
   const { meta, teams, insights = {} } = state.data;
   const favorite = teams[0];
@@ -256,4 +315,6 @@ document.getElementById("sortSelect").addEventListener("change", (event) => {
 });
 
 loadData();
+
+
 

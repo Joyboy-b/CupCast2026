@@ -1,0 +1,52 @@
+{
+  "asOf": "2026-07-08",
+  "stage": "Quarterfinals next",
+  "headline": "Round of 16 complete. Quarterfinals are set.",
+  "note": "Argentina completed a 3-2 comeback over Egypt, Switzerland advanced 4-3 on penalties after a 0-0 draw with Colombia, and both Brazil and Portugal were eliminated.",
+  "quarterfinals": [
+    {
+      "match": "QF1",
+      "teamA": "Morocco",
+      "teamB": "France",
+      "status": "Next",
+      "path": "Morocco 3-0 Canada / France 1-0 Paraguay"
+    },
+    {
+      "match": "QF2",
+      "teamA": "Norway",
+      "teamB": "England",
+      "status": "Next",
+      "path": "Norway 2-1 Brazil / England 3-2 Mexico"
+    },
+    {
+      "match": "QF3",
+      "teamA": "Spain",
+      "teamB": "Belgium",
+      "status": "Next",
+      "path": "Spain 1-0 Portugal / Belgium 4-1 United States"
+    },
+    {
+      "match": "QF4",
+      "teamA": "Argentina",
+      "teamB": "Switzerland",
+      "status": "Next",
+      "path": "Argentina 3-2 Egypt / Switzerland 0-0 Colombia, 4-3 pens"
+    }
+  ],
+  "roundOf16": [
+    { "winner": "Morocco", "loser": "Canada", "score": "3-0", "method": "FT" },
+    { "winner": "France", "loser": "Paraguay", "score": "1-0", "method": "FT" },
+    { "winner": "Norway", "loser": "Brazil", "score": "2-1", "method": "FT" },
+    { "winner": "England", "loser": "Mexico", "score": "3-2", "method": "FT" },
+    { "winner": "Spain", "loser": "Portugal", "score": "1-0", "method": "FT" },
+    { "winner": "Belgium", "loser": "United States", "score": "4-1", "method": "FT" },
+    { "winner": "Argentina", "loser": "Egypt", "score": "3-2", "method": "FT" },
+    { "winner": "Switzerland", "loser": "Colombia", "score": "0-0", "method": "Switzerland won 4-3 on penalties" }
+  ],
+  "eliminatedHeavyweights": ["Brazil", "Portugal", "Colombia", "United States"],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jul/07/argentina-v-egypt-world-cup-2026-last-16-live",
+    "https://www.theguardian.com/football/2026/jul/08/switzerland-colombia-world-cup-2026-last-16-match-report",
+    "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule"
+  ]
+}
