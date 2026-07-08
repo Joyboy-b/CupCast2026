@@ -8,11 +8,43 @@
   </head>
   <body>
     <main class="shell">
+      <nav class="topbar" aria-label="Dashboard summary">
+        <div class="brand-lockup">
+          <span class="brand-mark">CC</span>
+          <div>
+            <strong>CupCast 2026</strong>
+            <small>World Cup forecast lab</small>
+          </div>
+        </div>
+        <div class="topbar-meta">
+          <span>Monte Carlo engine</span>
+          <span>Seed ratings</span>
+          <span>Dashboard ready</span>
+        </div>
+      </nav>
+
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Monte Carlo simulation lab</p>
+          <p class="eyebrow">Tournament intelligence</p>
           <h1>CupCast 2026</h1>
           <p class="summary" id="summaryText">Loading simulation data...</p>
+          <div class="hero-tags" aria-label="Dashboard capabilities">
+            <span>Champion odds</span>
+            <span>Group forecasts</span>
+            <span>Region race</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="pitch-card">
+            <div class="pitch-line pitch-line-top"></div>
+            <div class="pitch-line pitch-line-bottom"></div>
+            <div class="center-circle"></div>
+            <div class="goal-box goal-box-left"></div>
+            <div class="goal-box goal-box-right"></div>
+            <span class="heat-dot dot-a"></span>
+            <span class="heat-dot dot-b"></span>
+            <span class="heat-dot dot-c"></span>
+          </div>
         </div>
         <div class="hero-metrics" aria-label="Simulation summary">
           <div>
@@ -35,10 +67,10 @@
       </section>
 
       <section class="toolbar" aria-label="Dashboard controls">
-        <div class="search-box">
+        <label class="search-box" aria-label="Search teams">
           <span aria-hidden="true">/</span>
           <input id="searchInput" type="search" placeholder="Search teams" />
-        </div>
+        </label>
         <div class="segmented" id="regionFilters" aria-label="Region filter"></div>
         <select id="sortSelect" aria-label="Sort teams">
           <option value="championOdds">Champion odds</option>
@@ -82,6 +114,7 @@
               <p class="eyebrow">Odds profile</p>
               <h2 id="selectedTeamName">Select a team</h2>
             </div>
+            <span>Click any team</span>
           </div>
           <div class="radar" id="oddsRadar" aria-label="Selected team odds chart"></div>
           <div class="stat-stack" id="selectedStats"></div>
@@ -99,7 +132,7 @@
           <div class="race-list" id="regionRace"></div>
         </article>
 
-        <article class="panel">
+        <article class="panel signal-panel">
           <div class="panel-header">
             <div>
               <p class="eyebrow">Signal board</p>

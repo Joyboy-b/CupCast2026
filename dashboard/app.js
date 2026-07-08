@@ -88,7 +88,7 @@ function renderTable() {
     const row = document.createElement("tr");
     row.className = state.selectedTeam?.team === team.team ? "active" : "";
     row.innerHTML = `
-      <td><span class="team-name">${team.team}</span><br><small>${team.region}</small></td>
+      <td><span class="team-name">${team.team}</span><br><small>${team.region} / ${team.groupAdvanceOdds}% advance</small></td>
       <td>${team.group}</td>
       <td>${Math.round(team.rating)}</td>
       <td>
@@ -234,7 +234,7 @@ function filteredTeams() {
 }
 
 function formatTeamLine(team, key, suffix) {
-  return team ? `${team.team} ${team[key] ?? 0}% ${suffix}` : "-";
+  return team ? `${team.team}<br><small>${team[key] ?? 0}% ${suffix}</small>` : "-";
 }
 
 function clamp(value, min, max) {
@@ -256,3 +256,4 @@ document.getElementById("sortSelect").addEventListener("change", (event) => {
 });
 
 loadData();
+
