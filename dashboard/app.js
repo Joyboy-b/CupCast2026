@@ -1,4 +1,4 @@
-﻿const state = {
+const state = {
   data: null,
   activeRegion: "All",
   sortKey: "championOdds",
@@ -267,23 +267,67 @@ function renderGroups() {
 }
 
 function renderBracket() {
-  const bracket = state.data.sampleBracket || [];
-  const visible = bracket.filter((match) => ["Quarterfinals", "Semifinals", "Final"].includes(match.round));
-  document.getElementById("bracketList").innerHTML = visible.length
-    ? visible
-        .map(
-          (match) => `
-          <div class="match">
-            <small>${match.round}</small>
-            <strong>${match.teamA} vs ${match.teamB}</strong>
-            <span>${match.score} ${match.winner}</span>
-          </div>
-        `
-        )
-        .join("")
-    : "<p>No bracket generated yet.</p>";
+  const live = state.live || fallbackLiveState;
+  const teams = new Map((state.data.teams || []).map((team) => [team.team, team]));
+  const quarterfinals = live.quarterfinals || [];
+  const scenarios = [
+    { name: "Model favorite path", mode: "favorite", detail: "Higher current title odds win each tie." },
+    { name: "Upset pressure path", mode: "upset", detail: "Lower-rated survivors flip the bracket." },
+    { name: "Balanced swing path", mode: "balanced", detail: "A mixed path with one side holding and one side breaking." },
+  ];
+
+  document.getElementById("bracketList").innerHTML = quarterfinals.length
+    ? scenarios.map((scenario) => renderScenario(scenario, quarterfinals, teams)).join("")
+    : "<p>No quarterfinal scenarios generated yet.</p>";
 }
 
+function renderScenario(scenario, quarterfinals, teams) {
+  const qfWinners = quarterfinals.map((match, index) => pickWinner(match.teamA, match.teamB, teams, scenario.mode, index));
+  const semiOne = { teamA: qfWinners[0], teamB: qfWinners[1] };
+  const semiTwo = { teamA: qfWinners[2], teamB: qfWinners[3] };
+  const finalistA = pickWinner(semiOne.teamA, semiOne.teamB, teams, scenario.mode, 4);
+  const finalistB = pickWinner(semiTwo.teamA, semiTwo.teamB, teams, scenario.mode, 5);
+  const champion = pickWinner(finalistA, finalistB, teams, scenario.mode, 6);
+
+  return `
+    <article class="scenario-card">
+      <div class="scenario-header">
+        <div>
+          <span>${scenario.name}</span>
+          <strong>${champion} wins</strong>
+        </div>
+        <small>${scenario.detail}</small>
+      </div>
+      <div class="scenario-rounds">
+        ${renderScenarioRound("Quarterfinals", quarterfinals.map((match, index) => `${match.teamA} vs ${match.teamB} -> ${qfWinners[index]}`))}
+        ${renderScenarioRound("Semifinals", [`${semiOne.teamA} vs ${semiOne.teamB} -> ${finalistA}`, `${semiTwo.teamA} vs ${semiTwo.teamB} -> ${finalistB}`])}
+        ${renderScenarioRound("Final", [`${finalistA} vs ${finalistB} -> ${champion}`])}
+      </div>
+    </article>
+  `;
+}
+
+function renderScenarioRound(label, matches) {
+  return `
+    <section class="scenario-round">
+      <h3>${label}</h3>
+      ${matches.map((match) => `<p>${match}</p>`).join("")}
+    </section>
+  `;
+}
+
+function pickWinner(teamA, teamB, teams, mode, index) {
+  const dataA = teams.get(teamA) || {};
+  const dataB = teams.get(teamB) || {};
+  const scoreA = dataA.championOdds ?? dataA.rating ?? 0;
+  const scoreB = dataB.championOdds ?? dataB.rating ?? 0;
+  const favorite = scoreA >= scoreB ? teamA : teamB;
+  const underdog = favorite === teamA ? teamB : teamA;
+
+  if (mode === "upset") return underdog;
+  if (mode === "balanced") return index % 2 === 0 ? favorite : underdog;
+  return favorite;
+}
 function filteredTeams() {
   const search = state.search.trim().toLowerCase();
   return state.data.teams
