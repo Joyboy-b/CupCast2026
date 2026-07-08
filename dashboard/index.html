@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>World Cup 2026 Predictor</title>
+    <title>CupCast 2026</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,7 +11,7 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Monte Carlo simulation lab</p>
-          <h1>World Cup 2026 Predictor</h1>
+          <h1>CupCast 2026</h1>
           <p class="summary" id="summaryText">Loading simulation data...</p>
         </div>
         <div class="hero-metrics" aria-label="Simulation summary">
@@ -27,12 +27,16 @@
             <span id="metricLongshot">-</span>
             <small>best longshot</small>
           </div>
+          <div>
+            <span id="metricContenders">0</span>
+            <small>title contenders</small>
+          </div>
         </div>
       </section>
 
       <section class="toolbar" aria-label="Dashboard controls">
         <div class="search-box">
-          <span aria-hidden="true">⌕</span>
+          <span aria-hidden="true">/</span>
           <input id="searchInput" type="search" placeholder="Search teams" />
         </div>
         <div class="segmented" id="regionFilters" aria-label="Region filter"></div>
@@ -40,6 +44,7 @@
           <option value="championOdds">Champion odds</option>
           <option value="finalOdds">Final odds</option>
           <option value="semifinalOdds">Semifinal odds</option>
+          <option value="groupWinnerOdds">Group winner</option>
           <option value="groupAdvanceOdds">Group advance</option>
           <option value="rating">Rating</option>
         </select>
@@ -62,6 +67,7 @@
                   <th>Group</th>
                   <th>Rating</th>
                   <th>Champion</th>
+                  <th>Group win</th>
                   <th>Final</th>
                 </tr>
               </thead>
@@ -80,6 +86,28 @@
           <div class="radar" id="oddsRadar" aria-label="Selected team odds chart"></div>
           <div class="stat-stack" id="selectedStats"></div>
         </aside>
+      </section>
+
+      <section class="analysis-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Confederations</p>
+              <h2>Region Title Race</h2>
+            </div>
+          </div>
+          <div class="race-list" id="regionRace"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Signal board</p>
+              <h2>Model Insights</h2>
+            </div>
+          </div>
+          <div class="insight-list" id="modelInsights"></div>
+        </article>
       </section>
 
       <section class="lower-grid">

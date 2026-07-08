@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import itertools
 import random
@@ -32,6 +32,8 @@ class SimulationSummary:
     quarterfinal: Counter[str] = field(default_factory=Counter)
     knockout: Counter[str] = field(default_factory=Counter)
     group_advance: Counter[str] = field(default_factory=Counter)
+    group_winner: Counter[str] = field(default_factory=Counter)
+    region_champion: Counter[str] = field(default_factory=Counter)
     sample_bracket: list[dict[str, str]] = field(default_factory=list)
 
 
@@ -58,8 +60,13 @@ def summarize_simulations(teams: list[Team], iterations: int, seed: int = 2026) 
     for index in range(iterations):
         result = run_tournament(teams, rng)
         rounds = result["rounds"]
-        summary.champion[result["champion"].name] += 1
+        champion = result["champion"]
+        summary.champion[champion.name] += 1
         summary.runner_up[result["runner_up"].name] += 1
+        summary.region_champion[champion.region] += 1
+
+        for table in result["group_tables"].values():
+            summary.group_winner[table[0].team.name] += 1
 
         for team in result["qualifiers"]:
             summary.group_advance[team.name] += 1
@@ -184,29 +191,34 @@ def play_knockout(teams: list[Team], rng: random.Random) -> list[dict[str, objec
 
 
 def serialize_summary(summary: SimulationSummary, teams: list[Team]) -> dict[str, object]:
+    serialized_teams = [
+        {
+            "team": team.name,
+            "group": team.group,
+            "region": team.region,
+            "rating": team.rating,
+            "attack": team.attack,
+            "defense": team.defense,
+            "championOdds": pct(summary.champion[team.name], summary.iterations),
+            "finalOdds": pct(summary.champion[team.name] + summary.runner_up[team.name], summary.iterations),
+            "semifinalOdds": pct(summary.semifinal[team.name], summary.iterations),
+            "quarterfinalOdds": pct(summary.quarterfinal[team.name], summary.iterations),
+            "knockoutOdds": pct(summary.knockout[team.name], summary.iterations),
+            "groupAdvanceOdds": pct(summary.group_advance[team.name], summary.iterations),
+            "groupWinnerOdds": pct(summary.group_winner[team.name], summary.iterations),
+        }
+        for team in sorted(teams, key=lambda item: summary.champion[item.name], reverse=True)
+    ]
+
     return {
         "meta": {
-            "title": "World Cup 2026 Predictor",
+            "title": "CupCast 2026",
             "iterations": summary.iterations,
             "note": "Seed data is illustrative and should be replaced with official teams/groups before serious use.",
         },
-        "teams": [
-            {
-                "team": team.name,
-                "group": team.group,
-                "region": team.region,
-                "rating": team.rating,
-                "attack": team.attack,
-                "defense": team.defense,
-                "championOdds": pct(summary.champion[team.name], summary.iterations),
-                "finalOdds": pct(summary.champion[team.name] + summary.runner_up[team.name], summary.iterations),
-                "semifinalOdds": pct(summary.semifinal[team.name], summary.iterations),
-                "quarterfinalOdds": pct(summary.quarterfinal[team.name], summary.iterations),
-                "knockoutOdds": pct(summary.knockout[team.name], summary.iterations),
-                "groupAdvanceOdds": pct(summary.group_advance[team.name], summary.iterations),
-            }
-            for team in sorted(teams, key=lambda item: summary.champion[item.name], reverse=True)
-        ],
+        "teams": serialized_teams,
+        "regionOdds": serialize_region_odds(summary),
+        "insights": serialize_insights(serialized_teams),
         "sampleBracket": summary.sample_bracket,
     }
 
@@ -225,6 +237,35 @@ def serialize_bracket(rounds: list[dict[str, object]]) -> list[dict[str, str]]:
                 }
             )
     return bracket
+
+
+def serialize_region_odds(summary: SimulationSummary) -> list[dict[str, object]]:
+    return [
+        {
+            "region": region,
+            "championOdds": pct(count, summary.iterations),
+        }
+        for region, count in summary.region_champion.most_common()
+    ]
+
+
+def serialize_insights(teams: list[dict[str, object]]) -> dict[str, object]:
+    contenders = [team for team in teams if team["championOdds"] >= 1]
+    longshots = [team for team in teams if 0 < team["championOdds"] < 2]
+    safest_group_picks = sorted(teams, key=lambda team: team["groupWinnerOdds"], reverse=True)[:5]
+    upset_watch = sorted(
+        teams,
+        key=lambda team: (team["groupAdvanceOdds"] - team["championOdds"], team["rating"]),
+        reverse=True,
+    )[:5]
+
+    return {
+        "titleContenders": len(contenders),
+        "topFavorites": teams[:5],
+        "liveLongshots": longshots[:5],
+        "safestGroupPicks": safest_group_picks,
+        "upsetWatch": upset_watch,
+    }
 
 
 def pct(count: int, iterations: int) -> float:

@@ -1,6 +1,6 @@
-# World Cup 2026 Predictor
+﻿# CupCast 2026
 
-A Python-first project for World Cup data analysis, match prediction, and Monte Carlo tournament simulations, with a custom browser dashboard for exploring the results.
+CupCast 2026 is a Python-first World Cup forecasting project for match prediction, Monte Carlo tournament simulation, and dashboard-driven analysis.
 
 The included `data/teams_seed.csv` is a starter field for experimentation. Replace it with the official final teams, groups, and ratings when you want production-grade predictions.
 
@@ -10,7 +10,8 @@ The included `data/teams_seed.csv` is a starter field for experimentation. Repla
 - Simulates the 48-team, 12-group World Cup format.
 - Advances top two teams from each group plus the eight best third-place teams.
 - Runs a round-of-32 knockout bracket through the final.
-- Exports champion, final, semifinal, quarterfinal, knockout, and group-advance odds.
+- Exports champion, final, semifinal, quarterfinal, knockout, group-winner, and group-advance odds.
+- Summarizes region title share, title contenders, longshots, and upset-watch teams.
 - Powers a custom dashboard from `outputs/simulation_results.json`.
 
 ## Quick Start
@@ -49,6 +50,14 @@ Then visit:
 http://localhost:8000/dashboard/
 ```
 
+## Dashboard Views
+
+- Title probability power table with region filters and team search.
+- Team profile panel with champion, group winner, knockout, and final odds.
+- Region title race showing confederation-level champion share.
+- Model insights for favorites, group locks, longshots, and upset-watch teams.
+- Group strength map and sample knockout path from one simulated tournament.
+
 ## Project Layout
 
 ```text
@@ -62,6 +71,8 @@ outputs/
   simulation_results.json
 scripts/
   run_simulation.py
+  run_simulation.ps1
+  start_dashboard.ps1
 src/
   worldcup2026/
     data_loader.py

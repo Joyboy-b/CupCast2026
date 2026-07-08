@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "World Cup 2026 Predictor",
+    "title": "CupCast 2026",
     "iterations": 10000,
     "note": "Seed data is illustrative and should be replaced with official teams/groups before serious use."
   },
@@ -17,7 +17,8 @@
       "semifinalOdds": 30.89,
       "quarterfinalOdds": 51.07,
       "knockoutOdds": 99.92,
-      "groupAdvanceOdds": 99.92
+      "groupAdvanceOdds": 99.92,
+      "groupWinnerOdds": 89.67
     },
     {
       "team": "France",
@@ -31,7 +32,8 @@
       "semifinalOdds": 28.07,
       "quarterfinalOdds": 48.74,
       "knockoutOdds": 99.93,
-      "groupAdvanceOdds": 99.93
+      "groupAdvanceOdds": 99.93,
+      "groupWinnerOdds": 92.28
     },
     {
       "team": "England",
@@ -45,7 +47,8 @@
       "semifinalOdds": 32.05,
       "quarterfinalOdds": 53.52,
       "knockoutOdds": 99.74,
-      "groupAdvanceOdds": 99.74
+      "groupAdvanceOdds": 99.74,
+      "groupWinnerOdds": 82.86
     },
     {
       "team": "Spain",
@@ -59,7 +62,8 @@
       "semifinalOdds": 20.92,
       "quarterfinalOdds": 50.69,
       "knockoutOdds": 99.84,
-      "groupAdvanceOdds": 99.84
+      "groupAdvanceOdds": 99.84,
+      "groupWinnerOdds": 88.94
     },
     {
       "team": "Brazil",
@@ -73,7 +77,8 @@
       "semifinalOdds": 20.06,
       "quarterfinalOdds": 48.63,
       "knockoutOdds": 99.81,
-      "groupAdvanceOdds": 99.81
+      "groupAdvanceOdds": 99.81,
+      "groupWinnerOdds": 84.82
     },
     {
       "team": "Portugal",
@@ -87,7 +92,8 @@
       "semifinalOdds": 25.49,
       "quarterfinalOdds": 45.01,
       "knockoutOdds": 99.77,
-      "groupAdvanceOdds": 99.77
+      "groupAdvanceOdds": 99.77,
+      "groupWinnerOdds": 88.17
     },
     {
       "team": "Italy",
@@ -101,7 +107,8 @@
       "semifinalOdds": 27.78,
       "quarterfinalOdds": 45.69,
       "knockoutOdds": 99.31,
-      "groupAdvanceOdds": 99.31
+      "groupAdvanceOdds": 99.31,
+      "groupWinnerOdds": 80.91
     },
     {
       "team": "Germany",
@@ -115,7 +122,8 @@
       "semifinalOdds": 22.99,
       "quarterfinalOdds": 51.47,
       "knockoutOdds": 99.79,
-      "groupAdvanceOdds": 99.79
+      "groupAdvanceOdds": 99.79,
+      "groupWinnerOdds": 89.27
     },
     {
       "team": "Uruguay",
@@ -129,7 +137,8 @@
       "semifinalOdds": 24.25,
       "quarterfinalOdds": 40.14,
       "knockoutOdds": 95.35,
-      "groupAdvanceOdds": 95.35
+      "groupAdvanceOdds": 95.35,
+      "groupWinnerOdds": 61.16
     },
     {
       "team": "Belgium",
@@ -143,7 +152,8 @@
       "semifinalOdds": 24.58,
       "quarterfinalOdds": 46.63,
       "knockoutOdds": 99.28,
-      "groupAdvanceOdds": 99.28
+      "groupAdvanceOdds": 99.28,
+      "groupWinnerOdds": 70.04
     },
     {
       "team": "Netherlands",
@@ -157,7 +167,8 @@
       "semifinalOdds": 18.72,
       "quarterfinalOdds": 44.26,
       "knockoutOdds": 98.93,
-      "groupAdvanceOdds": 98.93
+      "groupAdvanceOdds": 98.93,
+      "groupWinnerOdds": 75.66
     },
     {
       "team": "Colombia",
@@ -171,7 +182,8 @@
       "semifinalOdds": 14.54,
       "quarterfinalOdds": 28.59,
       "knockoutOdds": 90.67,
-      "groupAdvanceOdds": 90.67
+      "groupAdvanceOdds": 90.67,
+      "groupWinnerOdds": 15.37
     },
     {
       "team": "Mexico",
@@ -185,7 +197,8 @@
       "semifinalOdds": 15.63,
       "quarterfinalOdds": 28.78,
       "knockoutOdds": 94.88,
-      "groupAdvanceOdds": 94.88
+      "groupAdvanceOdds": 94.88,
+      "groupWinnerOdds": 45.4
     },
     {
       "team": "Croatia",
@@ -199,7 +212,8 @@
       "semifinalOdds": 14.75,
       "quarterfinalOdds": 27.87,
       "knockoutOdds": 91.54,
-      "groupAdvanceOdds": 91.54
+      "groupAdvanceOdds": 91.54,
+      "groupWinnerOdds": 13.04
     },
     {
       "team": "Denmark",
@@ -213,7 +227,8 @@
       "semifinalOdds": 10.75,
       "quarterfinalOdds": 25.78,
       "knockoutOdds": 88.51,
-      "groupAdvanceOdds": 88.51
+      "groupAdvanceOdds": 88.51,
+      "groupWinnerOdds": 8.7
     },
     {
       "team": "Ecuador",
@@ -227,7 +242,8 @@
       "semifinalOdds": 9.86,
       "quarterfinalOdds": 21.61,
       "knockoutOdds": 91.71,
-      "groupAdvanceOdds": 91.71
+      "groupAdvanceOdds": 91.71,
+      "groupWinnerOdds": 32.6
     },
     {
       "team": "Morocco",
@@ -241,7 +257,8 @@
       "semifinalOdds": 11.84,
       "quarterfinalOdds": 24.32,
       "knockoutOdds": 89.23,
-      "groupAdvanceOdds": 89.23
+      "groupAdvanceOdds": 89.23,
+      "groupWinnerOdds": 19.04
     },
     {
       "team": "Austria",
@@ -255,7 +272,8 @@
       "semifinalOdds": 8.87,
       "quarterfinalOdds": 19.31,
       "knockoutOdds": 94.43,
-      "groupAdvanceOdds": 94.43
+      "groupAdvanceOdds": 94.43,
+      "groupWinnerOdds": 25.79
     },
     {
       "team": "Senegal",
@@ -269,7 +287,8 @@
       "semifinalOdds": 7.94,
       "quarterfinalOdds": 16.65,
       "knockoutOdds": 83.9,
-      "groupAdvanceOdds": 83.9
+      "groupAdvanceOdds": 83.9,
+      "groupWinnerOdds": 6.07
     },
     {
       "team": "Switzerland",
@@ -283,7 +302,8 @@
       "semifinalOdds": 9.34,
       "quarterfinalOdds": 19.84,
       "knockoutOdds": 86.78,
-      "groupAdvanceOdds": 86.78
+      "groupAdvanceOdds": 86.78,
+      "groupWinnerOdds": 9.23
     },
     {
       "team": "Japan",
@@ -297,7 +317,8 @@
       "semifinalOdds": 7.32,
       "quarterfinalOdds": 16.12,
       "knockoutOdds": 78.95,
-      "groupAdvanceOdds": 78.95
+      "groupAdvanceOdds": 78.95,
+      "groupWinnerOdds": 20.88
     },
     {
       "team": "United States",
@@ -311,7 +332,8 @@
       "semifinalOdds": 3.92,
       "quarterfinalOdds": 10.43,
       "knockoutOdds": 71.5,
-      "groupAdvanceOdds": 71.5
+      "groupAdvanceOdds": 71.5,
+      "groupWinnerOdds": 14.88
     },
     {
       "team": "South Korea",
@@ -325,7 +347,8 @@
       "semifinalOdds": 3.4,
       "quarterfinalOdds": 9.76,
       "knockoutOdds": 84.4,
-      "groupAdvanceOdds": 84.4
+      "groupAdvanceOdds": 84.4,
+      "groupWinnerOdds": 21.24
     },
     {
       "team": "Serbia",
@@ -339,7 +362,8 @@
       "semifinalOdds": 2.58,
       "quarterfinalOdds": 8.58,
       "knockoutOdds": 82.81,
-      "groupAdvanceOdds": 82.81
+      "groupAdvanceOdds": 82.81,
+      "groupWinnerOdds": 8.7
     },
     {
       "team": "Ivory Coast",
@@ -353,7 +377,8 @@
       "semifinalOdds": 1.57,
       "quarterfinalOdds": 5.62,
       "knockoutOdds": 84.69,
-      "groupAdvanceOdds": 84.69
+      "groupAdvanceOdds": 84.69,
+      "groupWinnerOdds": 13.58
     },
     {
       "team": "Chile",
@@ -367,7 +392,8 @@
       "semifinalOdds": 0.66,
       "quarterfinalOdds": 3.15,
       "knockoutOdds": 75.45,
-      "groupAdvanceOdds": 75.45
+      "groupAdvanceOdds": 75.45,
+      "groupWinnerOdds": 6.49
     },
     {
       "team": "Canada",
@@ -381,7 +407,8 @@
       "semifinalOdds": 0.25,
       "quarterfinalOdds": 1.62,
       "knockoutOdds": 60.1,
-      "groupAdvanceOdds": 60.1
+      "groupAdvanceOdds": 60.1,
+      "groupWinnerOdds": 4.39
     },
     {
       "team": "Nigeria",
@@ -395,7 +422,8 @@
       "semifinalOdds": 0.5,
       "quarterfinalOdds": 2.13,
       "knockoutOdds": 55.57,
-      "groupAdvanceOdds": 55.57
+      "groupAdvanceOdds": 55.57,
+      "groupWinnerOdds": 1.44
     },
     {
       "team": "New Zealand",
@@ -409,7 +437,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.0,
       "knockoutOdds": 12.18,
-      "groupAdvanceOdds": 12.18
+      "groupAdvanceOdds": 12.18,
+      "groupWinnerOdds": 0.76
     },
     {
       "team": "Panama",
@@ -423,7 +452,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.01,
       "knockoutOdds": 21.03,
-      "groupAdvanceOdds": 21.03
+      "groupAdvanceOdds": 21.03,
+      "groupWinnerOdds": 0.91
     },
     {
       "team": "Ghana",
@@ -437,7 +467,8 @@
       "semifinalOdds": 0.02,
       "quarterfinalOdds": 0.16,
       "knockoutOdds": 32.03,
-      "groupAdvanceOdds": 32.03
+      "groupAdvanceOdds": 32.03,
+      "groupWinnerOdds": 3.08
     },
     {
       "team": "Saudi Arabia",
@@ -451,7 +482,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.01,
       "knockoutOdds": 17.63,
-      "groupAdvanceOdds": 17.63
+      "groupAdvanceOdds": 17.63,
+      "groupWinnerOdds": 0.19
     },
     {
       "team": "Scotland",
@@ -465,7 +497,8 @@
       "semifinalOdds": 0.15,
       "quarterfinalOdds": 1.0,
       "knockoutOdds": 57.58,
-      "groupAdvanceOdds": 57.58
+      "groupAdvanceOdds": 57.58,
+      "groupWinnerOdds": 1.48
     },
     {
       "team": "Costa Rica",
@@ -479,7 +512,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.0,
       "knockoutOdds": 17.94,
-      "groupAdvanceOdds": 17.94
+      "groupAdvanceOdds": 17.94,
+      "groupWinnerOdds": 0.17
     },
     {
       "team": "Iran",
@@ -493,7 +527,8 @@
       "semifinalOdds": 0.07,
       "quarterfinalOdds": 0.71,
       "knockoutOdds": 54.85,
-      "groupAdvanceOdds": 54.85
+      "groupAdvanceOdds": 54.85,
+      "groupWinnerOdds": 1.89
     },
     {
       "team": "Jamaica",
@@ -507,7 +542,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.0,
       "knockoutOdds": 16.28,
-      "groupAdvanceOdds": 16.28
+      "groupAdvanceOdds": 16.28,
+      "groupWinnerOdds": 0.25
     },
     {
       "team": "Australia",
@@ -521,7 +557,8 @@
       "semifinalOdds": 0.01,
       "quarterfinalOdds": 0.15,
       "knockoutOdds": 38.21,
-      "groupAdvanceOdds": 38.21
+      "groupAdvanceOdds": 38.21,
+      "groupWinnerOdds": 1.05
     },
     {
       "team": "Tunisia",
@@ -535,7 +572,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.1,
       "knockoutOdds": 30.79,
-      "groupAdvanceOdds": 30.79
+      "groupAdvanceOdds": 30.79,
+      "groupWinnerOdds": 0.72
     },
     {
       "team": "Peru",
@@ -549,7 +587,8 @@
       "semifinalOdds": 0.02,
       "quarterfinalOdds": 0.22,
       "knockoutOdds": 47.03,
-      "groupAdvanceOdds": 47.03
+      "groupAdvanceOdds": 47.03,
+      "groupWinnerOdds": 1.38
     },
     {
       "team": "South Africa",
@@ -563,7 +602,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.04,
       "knockoutOdds": 26.11,
-      "groupAdvanceOdds": 26.11
+      "groupAdvanceOdds": 26.11,
+      "groupWinnerOdds": 0.45
     },
     {
       "team": "Egypt",
@@ -577,7 +617,8 @@
       "semifinalOdds": 0.08,
       "quarterfinalOdds": 0.69,
       "knockoutOdds": 65.3,
-      "groupAdvanceOdds": 65.3
+      "groupAdvanceOdds": 65.3,
+      "groupWinnerOdds": 3.72
     },
     {
       "team": "Qatar",
@@ -591,7 +632,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.01,
       "knockoutOdds": 23.72,
-      "groupAdvanceOdds": 23.72
+      "groupAdvanceOdds": 23.72,
+      "groupWinnerOdds": 0.52
     },
     {
       "team": "Paraguay",
@@ -605,7 +647,8 @@
       "semifinalOdds": 0.11,
       "quarterfinalOdds": 0.49,
       "knockoutOdds": 58.68,
-      "groupAdvanceOdds": 58.68
+      "groupAdvanceOdds": 58.68,
+      "groupWinnerOdds": 2.56
     },
     {
       "team": "Uzbekistan",
@@ -619,7 +662,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.01,
       "knockoutOdds": 23.62,
-      "groupAdvanceOdds": 23.62
+      "groupAdvanceOdds": 23.62,
+      "groupWinnerOdds": 0.57
     },
     {
       "team": "Venezuela",
@@ -633,7 +677,8 @@
       "semifinalOdds": 0.02,
       "quarterfinalOdds": 0.21,
       "knockoutOdds": 63.52,
-      "groupAdvanceOdds": 63.52
+      "groupAdvanceOdds": 63.52,
+      "groupWinnerOdds": 4.87
     },
     {
       "team": "Honduras",
@@ -647,7 +692,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.0,
       "knockoutOdds": 21.5,
-      "groupAdvanceOdds": 21.5
+      "groupAdvanceOdds": 21.5,
+      "groupWinnerOdds": 0.64
     },
     {
       "team": "Mali",
@@ -661,7 +707,8 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.18,
       "knockoutOdds": 61.46,
-      "groupAdvanceOdds": 61.46
+      "groupAdvanceOdds": 61.46,
+      "groupWinnerOdds": 3.77
     },
     {
       "team": "Jordan",
@@ -675,9 +722,343 @@
       "semifinalOdds": 0.0,
       "quarterfinalOdds": 0.0,
       "knockoutOdds": 13.75,
-      "groupAdvanceOdds": 13.75
+      "groupAdvanceOdds": 13.75,
+      "groupWinnerOdds": 0.4
     }
   ],
+  "regionOdds": [
+    {
+      "region": "UEFA",
+      "championOdds": 64.53
+    },
+    {
+      "region": "CONMEBOL",
+      "championOdds": 32.21
+    },
+    {
+      "region": "CONCACAF",
+      "championOdds": 1.45
+    },
+    {
+      "region": "CAF",
+      "championOdds": 1.25
+    },
+    {
+      "region": "AFC",
+      "championOdds": 0.56
+    }
+  ],
+  "insights": {
+    "titleContenders": 15,
+    "topFavorites": [
+      {
+        "team": "Argentina",
+        "group": "D",
+        "region": "CONMEBOL",
+        "rating": 2030.0,
+        "attack": 1.34,
+        "defense": 0.74,
+        "championOdds": 16.28,
+        "finalOdds": 20.1,
+        "semifinalOdds": 30.89,
+        "quarterfinalOdds": 51.07,
+        "knockoutOdds": 99.92,
+        "groupAdvanceOdds": 99.92,
+        "groupWinnerOdds": 89.67
+      },
+      {
+        "team": "France",
+        "group": "E",
+        "region": "UEFA",
+        "rating": 2025.0,
+        "attack": 1.33,
+        "defense": 0.75,
+        "championOdds": 14.15,
+        "finalOdds": 17.69,
+        "semifinalOdds": 28.07,
+        "quarterfinalOdds": 48.74,
+        "knockoutOdds": 99.93,
+        "groupAdvanceOdds": 99.93,
+        "groupWinnerOdds": 92.28
+      },
+      {
+        "team": "England",
+        "group": "G",
+        "region": "UEFA",
+        "rating": 1985.0,
+        "attack": 1.28,
+        "defense": 0.79,
+        "championOdds": 10.23,
+        "finalOdds": 13.72,
+        "semifinalOdds": 32.05,
+        "quarterfinalOdds": 53.52,
+        "knockoutOdds": 99.74,
+        "groupAdvanceOdds": 99.74,
+        "groupWinnerOdds": 82.86
+      },
+      {
+        "team": "Spain",
+        "group": "H",
+        "region": "UEFA",
+        "rating": 1995.0,
+        "attack": 1.3,
+        "defense": 0.78,
+        "championOdds": 9.27,
+        "finalOdds": 12.18,
+        "semifinalOdds": 20.92,
+        "quarterfinalOdds": 50.69,
+        "knockoutOdds": 99.84,
+        "groupAdvanceOdds": 99.84,
+        "groupWinnerOdds": 88.94
+      },
+      {
+        "team": "Brazil",
+        "group": "F",
+        "region": "CONMEBOL",
+        "rating": 1990.0,
+        "attack": 1.3,
+        "defense": 0.78,
+        "championOdds": 8.59,
+        "finalOdds": 11.28,
+        "semifinalOdds": 20.06,
+        "quarterfinalOdds": 48.63,
+        "knockoutOdds": 99.81,
+        "groupAdvanceOdds": 99.81,
+        "groupWinnerOdds": 84.82
+      }
+    ],
+    "liveLongshots": [
+      {
+        "team": "Colombia",
+        "group": "G",
+        "region": "CONMEBOL",
+        "rating": 1845.0,
+        "attack": 1.11,
+        "defense": 0.9,
+        "championOdds": 1.52,
+        "finalOdds": 6.65,
+        "semifinalOdds": 14.54,
+        "quarterfinalOdds": 28.59,
+        "knockoutOdds": 90.67,
+        "groupAdvanceOdds": 90.67,
+        "groupWinnerOdds": 15.37
+      },
+      {
+        "team": "Mexico",
+        "group": "A",
+        "region": "CONCACAF",
+        "rating": 1840.0,
+        "attack": 1.13,
+        "defense": 0.91,
+        "championOdds": 1.23,
+        "finalOdds": 6.32,
+        "semifinalOdds": 15.63,
+        "quarterfinalOdds": 28.78,
+        "knockoutOdds": 94.88,
+        "groupAdvanceOdds": 94.88,
+        "groupWinnerOdds": 45.4
+      },
+      {
+        "team": "Croatia",
+        "group": "F",
+        "region": "UEFA",
+        "rating": 1840.0,
+        "attack": 1.09,
+        "defense": 0.91,
+        "championOdds": 1.21,
+        "finalOdds": 6.31,
+        "semifinalOdds": 14.75,
+        "quarterfinalOdds": 27.87,
+        "knockoutOdds": 91.54,
+        "groupAdvanceOdds": 91.54,
+        "groupWinnerOdds": 13.04
+      },
+      {
+        "team": "Denmark",
+        "group": "D",
+        "region": "UEFA",
+        "rating": 1845.0,
+        "attack": 1.1,
+        "defense": 0.91,
+        "championOdds": 1.09,
+        "finalOdds": 5.5,
+        "semifinalOdds": 10.75,
+        "quarterfinalOdds": 25.78,
+        "knockoutOdds": 88.51,
+        "groupAdvanceOdds": 88.51,
+        "groupWinnerOdds": 8.7
+      },
+      {
+        "team": "Ecuador",
+        "group": "A",
+        "region": "CONMEBOL",
+        "rating": 1815.0,
+        "attack": 1.08,
+        "defense": 0.92,
+        "championOdds": 0.75,
+        "finalOdds": 3.63,
+        "semifinalOdds": 9.86,
+        "quarterfinalOdds": 21.61,
+        "knockoutOdds": 91.71,
+        "groupAdvanceOdds": 91.71,
+        "groupWinnerOdds": 32.6
+      }
+    ],
+    "safestGroupPicks": [
+      {
+        "team": "France",
+        "group": "E",
+        "region": "UEFA",
+        "rating": 2025.0,
+        "attack": 1.33,
+        "defense": 0.75,
+        "championOdds": 14.15,
+        "finalOdds": 17.69,
+        "semifinalOdds": 28.07,
+        "quarterfinalOdds": 48.74,
+        "knockoutOdds": 99.93,
+        "groupAdvanceOdds": 99.93,
+        "groupWinnerOdds": 92.28
+      },
+      {
+        "team": "Argentina",
+        "group": "D",
+        "region": "CONMEBOL",
+        "rating": 2030.0,
+        "attack": 1.34,
+        "defense": 0.74,
+        "championOdds": 16.28,
+        "finalOdds": 20.1,
+        "semifinalOdds": 30.89,
+        "quarterfinalOdds": 51.07,
+        "knockoutOdds": 99.92,
+        "groupAdvanceOdds": 99.92,
+        "groupWinnerOdds": 89.67
+      },
+      {
+        "team": "Germany",
+        "group": "I",
+        "region": "UEFA",
+        "rating": 1955.0,
+        "attack": 1.25,
+        "defense": 0.81,
+        "championOdds": 5.46,
+        "finalOdds": 8.04,
+        "semifinalOdds": 22.99,
+        "quarterfinalOdds": 51.47,
+        "knockoutOdds": 99.79,
+        "groupAdvanceOdds": 99.79,
+        "groupWinnerOdds": 89.27
+      },
+      {
+        "team": "Spain",
+        "group": "H",
+        "region": "UEFA",
+        "rating": 1995.0,
+        "attack": 1.3,
+        "defense": 0.78,
+        "championOdds": 9.27,
+        "finalOdds": 12.18,
+        "semifinalOdds": 20.92,
+        "quarterfinalOdds": 50.69,
+        "knockoutOdds": 99.84,
+        "groupAdvanceOdds": 99.84,
+        "groupWinnerOdds": 88.94
+      },
+      {
+        "team": "Portugal",
+        "group": "J",
+        "region": "UEFA",
+        "rating": 1965.0,
+        "attack": 1.26,
+        "defense": 0.8,
+        "championOdds": 7.42,
+        "finalOdds": 10.31,
+        "semifinalOdds": 25.49,
+        "quarterfinalOdds": 45.01,
+        "knockoutOdds": 99.77,
+        "groupAdvanceOdds": 99.77,
+        "groupWinnerOdds": 88.17
+      }
+    ],
+    "upsetWatch": [
+      {
+        "team": "Netherlands",
+        "group": "B",
+        "region": "UEFA",
+        "rating": 1935.0,
+        "attack": 1.25,
+        "defense": 0.82,
+        "championOdds": 4.18,
+        "finalOdds": 6.52,
+        "semifinalOdds": 18.72,
+        "quarterfinalOdds": 44.26,
+        "knockoutOdds": 98.93,
+        "groupAdvanceOdds": 98.93,
+        "groupWinnerOdds": 75.66
+      },
+      {
+        "team": "Belgium",
+        "group": "L",
+        "region": "UEFA",
+        "rating": 1895.0,
+        "attack": 1.18,
+        "defense": 0.87,
+        "championOdds": 4.64,
+        "finalOdds": 16.03,
+        "semifinalOdds": 24.58,
+        "quarterfinalOdds": 46.63,
+        "knockoutOdds": 99.28,
+        "groupAdvanceOdds": 99.28,
+        "groupWinnerOdds": 70.04
+      },
+      {
+        "team": "Germany",
+        "group": "I",
+        "region": "UEFA",
+        "rating": 1955.0,
+        "attack": 1.25,
+        "defense": 0.81,
+        "championOdds": 5.46,
+        "finalOdds": 8.04,
+        "semifinalOdds": 22.99,
+        "quarterfinalOdds": 51.47,
+        "knockoutOdds": 99.79,
+        "groupAdvanceOdds": 99.79,
+        "groupWinnerOdds": 89.27
+      },
+      {
+        "team": "Austria",
+        "group": "L",
+        "region": "UEFA",
+        "rating": 1810.0,
+        "attack": 1.08,
+        "defense": 0.94,
+        "championOdds": 0.46,
+        "finalOdds": 3.18,
+        "semifinalOdds": 8.87,
+        "quarterfinalOdds": 19.31,
+        "knockoutOdds": 94.43,
+        "groupAdvanceOdds": 94.43,
+        "groupWinnerOdds": 25.79
+      },
+      {
+        "team": "Mexico",
+        "group": "A",
+        "region": "CONCACAF",
+        "rating": 1840.0,
+        "attack": 1.13,
+        "defense": 0.91,
+        "championOdds": 1.23,
+        "finalOdds": 6.32,
+        "semifinalOdds": 15.63,
+        "quarterfinalOdds": 28.78,
+        "knockoutOdds": 94.88,
+        "groupAdvanceOdds": 94.88,
+        "groupWinnerOdds": 45.4
+      }
+    ]
+  },
   "sampleBracket": [
     {
       "round": "Round of 32",

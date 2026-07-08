@@ -1,4 +1,4 @@
-const state = {
+﻿const state = {
   data: null,
   activeRegion: "All",
   sortKey: "championOdds",
@@ -8,11 +8,13 @@ const state = {
 
 const fallbackData = {
   meta: {
-    title: "World Cup 2026 Predictor",
+    title: "CupCast 2026",
     iterations: 0,
     note: "Run python scripts/run_simulation.py, then serve the project with python -m http.server 8000 for live results.",
   },
   teams: [],
+  regionOdds: [],
+  insights: {},
   sampleBracket: [],
 };
 
@@ -34,16 +36,18 @@ function render() {
   renderFilters();
   renderTable();
   renderSelectedTeam();
+  renderRegionRace();
+  renderInsights();
   renderGroups();
   renderBracket();
 }
 
 function renderSummary() {
-  const { meta, teams } = state.data;
+  const { meta, teams, insights = {} } = state.data;
   const favorite = teams[0];
   const longshot = teams
-    .filter((team) => team.championOdds > 0)
-    .sort((a, b) => a.rating - b.rating || b.championOdds - a.championOdds)[0];
+    .filter((team) => team.championOdds > 0 && team.championOdds < 2)
+    .sort((a, b) => b.championOdds - a.championOdds || a.rating - b.rating)[0];
 
   document.getElementById("summaryText").textContent = meta.note;
   document.getElementById("metricIterations").textContent = formatNumber(meta.iterations);
@@ -53,6 +57,7 @@ function renderSummary() {
   document.getElementById("metricLongshot").textContent = longshot
     ? `${longshot.team} ${longshot.championOdds}%`
     : "-";
+  document.getElementById("metricContenders").textContent = insights.titleContenders || 0;
 }
 
 function renderFilters() {
@@ -92,6 +97,7 @@ function renderTable() {
           <strong>${team.championOdds}%</strong>
         </div>
       </td>
+      <td>${team.groupWinnerOdds ?? 0}%</td>
       <td>${team.finalOdds}%</td>
     `;
     row.addEventListener("click", () => {
@@ -126,6 +132,7 @@ function renderSelectedTeam() {
     ["Group", team.group],
     ["Region", team.region],
     ["Rating", Math.round(team.rating)],
+    ["Group winner", `${team.groupWinnerOdds ?? 0}%`],
     ["Group advance", `${team.groupAdvanceOdds}%`],
     ["Knockout", `${team.knockoutOdds}%`],
     ["Quarterfinal", `${team.quarterfinalOdds}%`],
@@ -135,6 +142,49 @@ function renderSelectedTeam() {
 
   stats.innerHTML = rows
     .map(([label, value]) => `<div class="stat-row"><span>${label}</span><strong>${value}</strong></div>`)
+    .join("");
+}
+
+function renderRegionRace() {
+  const regions = state.data.regionOdds || [];
+  const container = document.getElementById("regionRace");
+
+  container.innerHTML = regions.length
+    ? regions
+        .map(
+          (region) => `
+          <div class="race-row">
+            <div>
+              <strong>${region.region}</strong>
+              <small>${region.championOdds}% title share</small>
+            </div>
+            <div class="bar"><span style="width:${clamp(region.championOdds, 0, 100)}%"></span></div>
+          </div>
+        `
+        )
+        .join("")
+    : "<p>No region summary yet.</p>";
+}
+
+function renderInsights() {
+  const insights = state.data.insights || {};
+  const container = document.getElementById("modelInsights");
+  const cards = [
+    ["Top favorite", formatTeamLine((insights.topFavorites || [])[0], "championOdds", "title")],
+    ["Best group pick", formatTeamLine((insights.safestGroupPicks || [])[0], "groupWinnerOdds", "group")],
+    ["Upset watch", formatTeamLine((insights.upsetWatch || [])[0], "groupAdvanceOdds", "advance")],
+    ["Live longshot", formatTeamLine((insights.liveLongshots || [])[0], "championOdds", "title")],
+  ];
+
+  container.innerHTML = cards
+    .map(
+      ([label, value]) => `
+      <div class="insight-chip">
+        <span>${label}</span>
+        <strong>${value}</strong>
+      </div>
+    `
+    )
     .join("");
 }
 
@@ -149,7 +199,9 @@ function renderGroups() {
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([group, teams]) => {
       const sorted = teams.sort((a, b) => b.rating - a.rating);
-      const list = sorted.map((team) => `<li>${team.team} <small>${Math.round(team.rating)}</small></li>`).join("");
+      const list = sorted
+        .map((team) => `<li>${team.team} <small>${Math.round(team.rating)} / ${team.groupWinnerOdds ?? 0}%</small></li>`)
+        .join("");
       return `<section class="group-tile"><h3>Group ${group}</h3><ol>${list}</ol></section>`;
     })
     .join("");
@@ -179,6 +231,10 @@ function filteredTeams() {
     .filter((team) => state.activeRegion === "All" || team.region === state.activeRegion)
     .filter((team) => !search || team.team.toLowerCase().includes(search))
     .sort((a, b) => b[state.sortKey] - a[state.sortKey] || b.rating - a.rating);
+}
+
+function formatTeamLine(team, key, suffix) {
+  return team ? `${team.team} ${team[key] ?? 0}% ${suffix}` : "-";
 }
 
 function clamp(value, min, max) {

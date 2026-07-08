@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color-scheme: dark;
   --bg: #111412;
   --surface: #1b211e;
@@ -113,7 +113,7 @@ h2 {
 
 .hero-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
   gap: 10px;
   align-self: stretch;
   align-content: end;
@@ -205,7 +205,8 @@ select {
 }
 
 .grid,
-.lower-grid {
+.lower-grid,
+.analysis-grid {
   display: grid;
   gap: 14px;
   margin-top: 14px;
@@ -217,6 +218,13 @@ select {
 
 .lower-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 14px;
+  margin-top: 14px;
 }
 
 .panel {
@@ -342,7 +350,49 @@ tr.active td {
   color: var(--muted);
 }
 
-.group-map {
+
+.race-list,
+.insight-list {
+  display: grid;
+  gap: 10px;
+}
+
+.race-row,
+.insight-chip {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(53, 65, 55, 0.72);
+  border-radius: 7px;
+  background: #121714;
+}
+
+.race-row {
+  grid-template-columns: minmax(130px, 0.8fr) minmax(150px, 1.2fr);
+  align-items: center;
+}
+
+.race-row strong,
+.insight-chip strong {
+  display: block;
+  color: var(--text);
+}
+
+.race-row small,
+.insight-chip span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.insight-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.insight-chip {
+  min-height: 92px;
+  align-content: space-between;
+}`r`n`r`n.group-map {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
@@ -402,17 +452,17 @@ tr.active td {
   color: var(--gold);
   font-weight: 800;
 }
-
 @media (max-width: 1000px) {
   .hero,
   .grid,
   .lower-grid,
+  .analysis-grid,
   .toolbar {
     grid-template-columns: 1fr;
   }
 
   .hero-metrics {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .group-map {
@@ -427,19 +477,24 @@ tr.active td {
   }
 
   .hero {
-    min-height: 420px;
+    min-height: 460px;
     padding: 22px;
   }
 
   .hero-metrics,
-  .group-map {
+  .group-map,
+  .insight-list {
+    grid-template-columns: 1fr;
+  }
+
+  .race-row {
     grid-template-columns: 1fr;
   }
 
   th:nth-child(3),
   td:nth-child(3),
-  th:nth-child(5),
-  td:nth-child(5) {
+  th:nth-child(6),
+  td:nth-child(6) {
     display: none;
   }
 
@@ -455,3 +510,4 @@ tr.active td {
     grid-column: 1 / -1;
   }
 }
+
